@@ -12,6 +12,7 @@ import java.util.List;
 
 import static java.util.Optional.ofNullable;
 
+// Criou essa interface para garantir que não vai expor a implementação do serviço
 @Service
 public class UserServiceImpl implements UserService {
 

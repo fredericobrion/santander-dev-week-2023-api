@@ -5,7 +5,9 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.MappedSuperclass;
 
+// Para garantir que vai ser propagado para as classes
 @MappedSuperclass
+// Criado pra não duplicar na Classe Feature e News, já que são iguais
 public abstract class BaseItem {
     
     @Id

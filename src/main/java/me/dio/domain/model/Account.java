@@ -15,6 +15,8 @@ public class Account {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+
+    // Para definir características da coluna
     @Column(unique = true)
     private String number;
 
@@ -23,6 +25,7 @@ public class Account {
     @Column(precision = 13, scale = 2)
     private BigDecimal balance;
 
+    // Pode ser que lmiit seja uma palavra reservada em alguns bancos de dados
     @Column(name = "additional_limit", precision = 13, scale = 2)
     private BigDecimal limit;
 

@@ -14,18 +14,22 @@ import jakarta.persistence.OneToOne;
 @Entity(name = "tb_user")
 public class User {
     
+    // Para gerar o identificador automaticamente
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;
 
+    // Um usuário que possui uma conta
+    // Cascade pra criar uma relação entre
     @OneToOne(cascade = CascadeType.ALL)
     private Account account;
     
     @OneToOne(cascade = CascadeType.ALL)
     private Card card;
 
+    // fetch eager é pra toda vez que for buscar um usuário no banco, ele já trazer as features
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Feature> features;
 
