@@ -25,6 +25,7 @@ public record UserController(UserService userService) {
     @ApiResponses(value = { 
             @ApiResponse(responseCode = "200", description = "Operation successful")
     })
+    // ResponseEntity é um tipo de retorno que encapsula o retorno da requisição HTTP
     public ResponseEntity<List<UserDto>> findAll() {
         var users = userService.findAll();
         var usersDto = users.stream().map(UserDto::new).collect(Collectors.toList());
